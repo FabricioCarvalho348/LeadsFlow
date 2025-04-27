@@ -1,0 +1,20 @@
+<div *ngIf="leads && leads.length > 0; else noLeads">
+  <ul>
+    <li *ngFor="let lead of leads" class="lead-item">
+      <div class="lead-details">
+        <strong>{{ lead.contactFirstName }}</strong> -
+        {{ lead.category }} -
+        {{ lead.price | currency:'USD' }}
+      </div>
+
+      <div class="lead-actions" *ngIf="status === 'New'">
+        <button (click)="accept(lead.id)">Accept</button>
+        <button (click)="decline(lead.id)">Decline</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noLeads>
+  <p>Nenhum lead encontrado para "{{ status }}"</p>
+</ng-template>

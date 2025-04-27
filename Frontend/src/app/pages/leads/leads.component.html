@@ -1,0 +1,91 @@
+<div class="leads-container">
+  <div class="tabs">
+    <button
+      (click)="changeStatus(leadStatus.New)"
+      [class.active]="status === leadStatus.New">
+      Invited
+    </button>
+    <button
+      (click)="changeStatus(leadStatus.Accepted)"
+      [class.active]="status === leadStatus.Accepted">
+      Accepted
+    </button>
+  </div>
+
+  <div class="lead-status" *ngIf="status === leadStatus.New">
+    <h2>Invited</h2>
+    <div *ngFor="let lead of invitedLeads" class="lead-card">
+      <div class="lead-header">
+        <span class="lead-contact">{{ lead.contactFirstName }} {{ lead.contactLastName }}</span> -
+        <span class="lead-date">{{ lead.dateCreated | date: 'MMMM d @ h:mm a' }}</span>
+      </div>
+
+      <div class="lead-info">
+        <div class="lead-location">
+          <i class="material-icons">location_on</i>
+          <span>{{ lead.suburb }}</span>
+        </div>
+        <div class="lead-service">
+          <i class="material-icons">business_center</i>
+          <span>{{ lead.category }}</span>
+        </div>
+        <div class="lead-id">
+          <span>Job ID: {{ lead.id }}</span>
+        </div>
+      </div>
+
+      <div class="lead-description">
+        <p>{{ lead.description }}</p>
+      </div>
+
+      <div class="lead-footer">
+        <button class="accept" (click)="accept(lead.id)">Accept</button>
+        <button class="decline" (click)="decline(lead.id)">Decline</button>
+        <span class="lead-value">{{ lead.price | currency:'USD' }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="lead-status" *ngIf="status === leadStatus.Accepted">
+    <h2>Accepted</h2>
+    <div *ngFor="let lead of acceptedLeads" class="lead-card">
+      <div class="lead-header">
+        <span class="lead-contact">{{ lead.contactFirstName }} {{ lead.contactLastName }}</span> -
+        <span class="lead-date">{{ lead.dateCreated | date: 'MMMM d @ h:mm a' }}</span>
+      </div>
+
+      <div class="lead-info">
+        <div class="lead-location">
+          <i class="material-icons">location_on</i>
+          <span>{{ lead.suburb }}</span>
+        </div>
+        <div class="lead-service">
+          <i class="material-icons">business_center</i>
+          <span>{{ lead.category }}</span>
+        </div>
+        <div class="lead-id">
+          <span>Job ID: {{ lead.id }}</span>
+        </div>
+      </div>
+
+      <div class="lead-contact-info">
+        <div class="contact-item">
+          <i class="material-icons">phone</i>
+          <span>{{ lead.contactPhone }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="material-icons">email</i>
+          <span>{{ lead.contactEmail }}</span>
+        </div>
+      </div>
+
+      <div class="lead-description">
+        <p>{{ lead.description }}</p>
+      </div>
+
+      <div class="lead-footer">
+        <span class="lead-value">{{ lead.price | currency:'USD' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

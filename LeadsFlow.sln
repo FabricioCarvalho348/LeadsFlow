@@ -4,13 +4,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{BD74
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E67B7540-1D3E-4ABA-988C-22B71BD38DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Api", "LeadsFlow.Api\LeadsFlow.Api.csproj", "{FE36E650-046D-46AF-BB27-5BC9D468089D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Api", "Backend\src\LeadsFlow.Api\LeadsFlow.Api.csproj", "{FE36E650-046D-46AF-BB27-5BC9D468089D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Application", "LeadsFlow.Application\LeadsFlow.Application.csproj", "{062FA5AE-E5E4-4BAC-8286-E35C9F65DE53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Application", "Backend\src\LeadsFlow.Application\LeadsFlow.Application.csproj", "{062FA5AE-E5E4-4BAC-8286-E35C9F65DE53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Domain", "LeadsFlow.Domain\LeadsFlow.Domain.csproj", "{44141816-81A4-4D21-A2C6-1CA6170D7798}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Domain", "Backend\src\LeadsFlow.Domain\LeadsFlow.Domain.csproj", "{44141816-81A4-4D21-A2C6-1CA6170D7798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Infrastructure", "LeadsFlow.Infrastructure\LeadsFlow.Infrastructure.csproj", "{727CF134-54C9-4AF9-B653-392F37E7EDCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeadsFlow.Infrastructure", "Backend\src\LeadsFlow.Infrastructure\LeadsFlow.Infrastructure.csproj", "{727CF134-54C9-4AF9-B653-392F37E7EDCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{E938C5B5-99F5-4ECF-BF09-10011C3B3D3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
