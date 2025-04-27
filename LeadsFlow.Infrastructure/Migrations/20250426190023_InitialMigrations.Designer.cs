@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeadsFlow.Infrastructure.Migrations
 {
     [DbContext(typeof(LeadsFlowDbContext))]
-    [Migration("20250425190409_InitialMigrations")]
+    [Migration("20250426190023_InitialMigrations")]
     partial class InitialMigrations
     {
         /// <inheritdoc />
@@ -59,6 +59,9 @@ namespace LeadsFlow.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");

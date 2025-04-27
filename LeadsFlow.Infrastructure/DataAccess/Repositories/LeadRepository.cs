@@ -1,4 +1,5 @@
 ﻿using LeadsFlow.Domain.Entities;
+using LeadsFlow.Domain.Enums;
 using LeadsFlow.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,9 +21,16 @@ public class LeadRepository : ILeadRepository
         return leads;
     }
 
-    public Task<Lead?> GetById(long id)
+    public async Task<Lead?> GetById(long id)
     {
-        throw new NotImplementedException();
+        return await _dbContext.Leads.SingleOrDefaultAsync(x => x.Id == id);
+    }
+
+    public async Task<List<Lead>> GetByStatusAsync(LeadStatus status)
+    {
+        return await _dbContext.Leads
+            .Where(lead => lead.Status == status)
+            .ToListAsync();
     }
 
     public async Task Add(Lead lead)
@@ -33,11 +41,12 @@ public class LeadRepository : ILeadRepository
 
     public Task Update(Lead lead)
     {
-        throw new NotImplementedException();
+        _dbContext.Leads.Update(lead);
+        return _dbContext.SaveChangesAsync();
     }
 
     public Task<bool> Exists(long id)
     {
-        throw new NotImplementedException();
+        return _dbContext.Leads.AnyAsync(x => x.Id == id);
     }
 }

@@ -3,6 +3,6 @@
 public enum LeadStatus
 {
     New = 0,
-    Accept = 1,
-    Decline = 2
+    Accepted = 1,
+    Declined = 2
 }
